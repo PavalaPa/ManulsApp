@@ -165,6 +165,14 @@ namespace Manyls {
             description = $"{Name} - манул. Семейство кошачьих. " + description;
             result = description + $"Возраст: {Age}. Зоопарк: {Zoo}";
         }
+
+        public virtual void ShowPhoto(PictureBox box)
+        {
+            Graphics g = Graphics.FromHwnd(box.Handle);
+            g.DrawImage(ImageBitmap, new Rectangle(0, 0, box.Width, box.Height));
+            /*Graphics g = Graphics.FromHwnd(box.Handle);
+            g.DrawString(Name, new Font("Cambria", 20), Brushes.LightGreen, box.Width / 2, box.Height / 2);*/
+        }
         public virtual Bitmap ImageBitmap
         {
             get
