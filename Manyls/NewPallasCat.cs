@@ -126,19 +126,19 @@ namespace Manyls {
                         else
                         {
                             // Если файл не существует, установим путь по умолчанию
-                            pathName = "\\ManulsApp\\Manyls\\MyManul.jpg";
+                            pathName = "";
                         }
                     }
                     else
                     {
                         // Если расширение не поддерживается, установим путь по умолчанию
-                        pathName = "\\ManulsApp\\Manyls\\MyManul.jpg";
+                        pathName = "";
                     }
                 }
                 else
                 {
                     // Если значение null или длина меньше 4, установим путь по умолчанию
-                    pathName = "\\ManulsApp\\Manyls\\MyManul.jpg";
+                    pathName = "";
                 }
 
                 OnPropertyChanged(nameof(PathName));
@@ -169,6 +169,7 @@ namespace Manyls {
         public virtual void ShowPhoto(PictureBox box)
         {
             Graphics g = Graphics.FromHwnd(box.Handle);
+            if (ImageBitmap == null) { g.Clear(Color.Cornsilk); return; }
             g.DrawImage(ImageBitmap, new Rectangle(0, 0, box.Width, box.Height));
             /*Graphics g = Graphics.FromHwnd(box.Handle);
             g.DrawString(Name, new Font("Cambria", 20), Brushes.LightGreen, box.Width / 2, box.Height / 2);*/

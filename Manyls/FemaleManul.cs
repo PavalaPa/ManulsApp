@@ -9,31 +9,34 @@ using System.Windows.Forms;
 
 namespace Manyls {
     public class FemaleManul : NewPallasCat {
-        public FemaleManul() { }
-        public override void ManulasProp(ref string description, out string result, string name = "Кот")
+        public FemaleManul() : base() { }
+
+        public FemaleManul(string name, DateTime dateTime, string zoo, string pathName) : base(name, dateTime, zoo, pathName) { }
+
+        public new void ManulasProp(ref string description, out string result, string name = "Кот")
         {
-            base.ManulasProp(ref description, out result, name);
-            if (!string.IsNullOrEmpty(name))
-            {
-                description = $"{name} - манул. Семейство кошачьих. " + description;
-                result = description + $"Возраст: {Age}. Зоопарк: {Zoo}. Это самка манула.";
-                return;
-            }
-            description = $"{Name} - манул. Семейство кошачьих. " + description;
+            description = $"{this.Name} - манул. Семейство кошачьих. " + description;
             result = description + $"Возраст: {Age}. Зоопарк: {Zoo}. Это самка манула.";
+            return;
         }
-        string projectDirectory = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
+        private string projectDirectory = Directory.GetParent(AppContext.BaseDirectory).Parent.Parent.Parent.FullName;
         public override sealed Bitmap ImageBitmap 
         {
             get
             {
                 if (string.IsNullOrEmpty(pathName) || !File.Exists(pathName))
-                return new Bitmap(Path.Combine(projectDirectory, "Manyls\\MyManul.jpg")); // Возвращаем null, если путь не существует
-
+                {
+                    return new Bitmap(Path.Combine(projectDirectory, "Manyls\\MyManul.jpg"));
+                }
                 return new Bitmap(pathName);
             }   
         }
-
         
+        public override void ShowPhoto(PictureBox box)
+        {
+            base.ShowPhoto(box);
+            Graphics g = Graphics.FromHwnd(box.Handle);
+            g.DrawString(Name, new Font("Cambria", 20), Brushes.White, box.Width / 2, box.Height / 2);
+        }
     }
 }
