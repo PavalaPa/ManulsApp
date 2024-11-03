@@ -34,6 +34,8 @@
             this.лр5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.лр6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.лр7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.лр8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.лр9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,9 @@
             this.лр3ToolStripMenuItem,
             this.лр5ToolStripMenuItem,
             this.лр6ToolStripMenuItem,
-            this.лр7ToolStripMenuItem});
+            this.лр7ToolStripMenuItem,
+            this.лр8ToolStripMenuItem,
+            this.лр9ToolStripMenuItem});
             this.лр1ToolStripMenuItem.Name = "лр1ToolStripMenuItem";
             this.лр1ToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
             this.лр1ToolStripMenuItem.Text = "Лр";
@@ -104,6 +108,20 @@
             this.лр7ToolStripMenuItem.Text = "Лр7";
             this.лр7ToolStripMenuItem.Click += new System.EventHandler(this.лр7ToolStripMenuItem_Click);
             // 
+            // лр8ToolStripMenuItem
+            // 
+            this.лр8ToolStripMenuItem.Name = "лр8ToolStripMenuItem";
+            this.лр8ToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.лр8ToolStripMenuItem.Text = "Лр8";
+            this.лр8ToolStripMenuItem.Click += new System.EventHandler(this.лр8ToolStripMenuItem_Click);
+            // 
+            // лр9ToolStripMenuItem
+            // 
+            this.лр9ToolStripMenuItem.Name = "лр9ToolStripMenuItem";
+            this.лр9ToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.лр9ToolStripMenuItem.Text = "Лр9";
+            this.лр9ToolStripMenuItem.Click += new System.EventHandler(this.лр9ToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -130,5 +148,7 @@
         private System.Windows.Forms.ToolStripMenuItem лр5ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem лр6ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem лр7ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem лр8ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem лр9ToolStripMenuItem;
     }
 }

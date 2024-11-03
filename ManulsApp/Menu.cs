@@ -51,5 +51,17 @@ namespace ManulsApp {
             Form f = new Form7();
             f.Show();
         }
+
+        private void лр8ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new Form8();
+            f.Show();
+        }
+
+        private void лр9ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new Form9();
+            f.Show();
+        }
     }
 }
