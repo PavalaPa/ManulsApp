@@ -48,7 +48,12 @@ namespace ManulsApp {
             listBox1.DisplayMember = "Name";
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
         }
-        
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         /*//Tests "sealed"
         class class1
         {

@@ -38,21 +38,21 @@
   <Class Name="Manyls.Employee" Collapsed="true">
     <Position X="6.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAhQAAAJAACAQAAAAIAAIEAAAAAAAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAgAhQAAAJAACAQAAAAMAAIEAAAAAAAAgII=</HashCode>
       <FileName>Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Manyls.ManulKeeper">
     <Position X="6" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAACAACAAAAAABEAACAAAAAgAA=</HashCode>
       <FileName>ManulKeeper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Manyls.ManulVeterinarian">
     <Position X="7.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAIAAAACAACAAAAAAAEAACAAAAAgAA=</HashCode>
       <FileName>ManulVeterinarian.cs</FileName>
     </TypeIdentifier>
   </Class>

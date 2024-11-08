@@ -8,19 +8,20 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Globalization;
 
 namespace Manyls {
-    public class ManulKeeper : Employee {
+    public sealed class ManulKeeper : Employee {
         private List<NewPallasCat> wards = new List<NewPallasCat>();
         public override List<NewPallasCat> Wards 
         {
             get => new List<NewPallasCat>(wards); // Возвращаем копию списка, чтобы избежать изменения оригинала
             set
-            {
+            {   
                 if (value == null)
                 {
-                    throw new ArgumentNullException(nameof(value), "Список не может быть null.");
+                    //throw new ArgumentNullException(nameof(value), "Список не может быть null.");
+                    value = new List<NewPallasCat>();
                 }
-
-                wards = new List<NewPallasCat>(value); // Устанавливаем новый список
+                else
+                    wards = new List<NewPallasCat>(value); // Устанавливаем новый список
             }
         }
         public void AddWard(NewPallasCat ward)
@@ -82,15 +83,19 @@ namespace Manyls {
             get => pathName;
             set 
             {
-                string res = value.Substring(value.Length - 4).ToLower();
-                if (File.Exists(value) && (res == ".png" || res == ".gif" || res == ".jpg" || res == ".bmp")) // Проверка существования файла
-                {
-                    pathName = value;
-                }
+                if (string.IsNullOrWhiteSpace(value)) pathName = value;
                 else
                 {
-                    // Если файл не существует, установим путь по умолчанию
-                    pathName = "NoPhoto.jpg";
+                    string res = value.Substring(value.Length - 4).ToLower();
+                    if (File.Exists(value) && (res == ".png" || res == ".gif" || res == ".jpg" || res == ".bmp")) // Проверка существования файла
+                    {
+                        pathName = value;
+                    }
+                    else
+                    {
+                        // Если файл не существует, установим путь по умолчанию
+                        pathName = "NoPhoto.jpg";
+                    }
                 }
             } 
         }
