@@ -99,7 +99,7 @@ namespace Manyls {
         {
             if (path == null) path = $"{Name}.txt";
             StreamWriter writer = new StreamWriter(path);
-            writer.Write($"Работник {Name} - Кипер манулов. Работает в зоопарке, известном как: {Zoo}. Устроился на работу в {StartWorking}.\nДата рождения работника:{BirthDay} (Полных лет:{CalcAge(BirthDay)})\nОтветственен за следующих манулов:");
+            writer.Write($"Работник {Name} - Врач манулов. Работает в зоопарке, известном как: {Zoo}. Устроился на работу в {StartWorking}.\nДата рождения работника:{BirthDay} (Полных лет:{CalcAge(BirthDay)})\nОтветственен за следующих манулов:");
             for(int i = 0; i < Wards.Count; i++)
             {
                 if (i == Wards.Count - 1) { writer.Write($"{Wards[i].Name}.\n"); break; }
