@@ -12,17 +12,17 @@ namespace Manyls {
         {
             Wards = wards;
         }
-        private List<NewPallasCat> wards;
-        public override List<NewPallasCat> Wards 
-        { 
-            get => wards; 
-            set => wards = value; 
-        }
-        public void NameText(PictureBox box, Font currFont)
+        public void NameText(PictureBox box, Font currFont, Color color)
         {
-            Graphics g = Graphics.FromHwnd(box.Handle);
-            g.DrawString(this.Name, currFont, Brushes.Red, 1, 1);
+            using (Graphics g = Graphics.FromHwnd(box.Handle))
+            {
+                using (Brush brush = new SolidBrush(color))
+                {
+                    g.DrawString(this.Name, currFont, brush, 1, 1);
+                }
+            }
         }
+
         public override string ToString()
         {
             if (string.IsNullOrEmpty(this.Name))
@@ -30,14 +30,6 @@ namespace Manyls {
                 return base.ToString();
             }
             return this.Name;
-        }
-        public void AddWard(NewPallasCat ward)
-        {
-            if (ward == null)
-            {
-                throw new ArgumentNullException(nameof(ward), "Объект не может быть null.");
-            }
-            wards.Add(ward);
         }
         private string pathName;
         public override string PathName 
@@ -58,19 +50,31 @@ namespace Manyls {
             }
         }
 
-        public override void WriteToFile(string resum = "Резюме отсутствует.", string path = null)
+        public override string WriteToFile(string resum = "Резюме отсутствует.", string path = null)
         {
+            string text = $"Работник {Name} - Кипер манулов. Работает в зоопарке, известном как: {Zoo}. Устроился на работу в {StartWorking}.\nДата рождения работника:{BirthDay} (Полных лет:{CalcAge(BirthDay)})\nОтветственен за следующих манулов:";
             if (path == null) path = $"{Name}.txt";
             StreamWriter writer = new StreamWriter(path);
-            writer.Write($"Работник {Name} - Кипер манулов. Работает в зоопарке, известном как: {Zoo}. Устроился на работу в {StartWorking}.\nДата рождения работника:{BirthDay} (Полных лет:{CalcAge(BirthDay)})\nОтветственен за следующих манулов:");
+            writer.Write(text);
             for (int i = 0; i < Wards.Count; i++)
             {
-                if (i == Wards.Count - 1) { writer.Write($"{Wards[i].Name}.\n"); break; }
+                if (i == Wards.Count - 1) 
+                { 
+                    writer.Write($"{Wards[i].Name}.\n");
+                    text += $"{Wards[i].Name}.\n";
+                    break; 
+                }
                 writer.Write($"{Wards[i].Name}, ");
+                text += $"{Wards[i].Name}, ";
             }
-            if (resum != "Резюме отсутствует.") { writer.Write("Ресюме работника:\n"); }
+            if (resum != "Резюме отсутствует.") 
+            { 
+                writer.Write("Ресюме работника:\n");
+                text += "Ресюме работника:\n";
+            }
             writer.WriteLine(resum);
             writer.Close();
+            return text;
         }
     }
 }

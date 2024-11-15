@@ -14,7 +14,118 @@ namespace Manyls {
         public virtual string Zoo { get; set; } = "Неизвестный зоопарк";
         public DateTime BirthDay { get; set; }
         public DateTime StartWorking { get; set; }
-        abstract public List<NewPallasCat> Wards { get; set; }
+
+        private int[,] manulMark = new int[3,3];
+        public int this [int i, int j]
+        {
+            get => manulMark[i, j];
+            set => manulMark[i, j] = value;
+        }
+
+        private List<NewPallasCat> wards = new List<NewPallasCat>();
+        public List<NewPallasCat> Wards 
+        {
+            get => new List<NewPallasCat>(wards); // Возвращаем копию списка, чтобы избежать изменения оригинала
+            set
+            {
+                if (value == null)
+                {
+                    //throw new ArgumentNullException(nameof(value), "Список не может быть null.");
+                    value = new List<NewPallasCat>();
+                }
+                else
+                    wards = new List<NewPallasCat>(value); // Устанавливаем новый список
+            }
+        }
+
+        public NewPallasCat this[int index]
+        {
+            get => wards[index];
+            set => wards[index] = value;
+        }
+
+        /*public NewPallasCat this[int pallasCatID]
+        {
+            get
+            {
+                NewPallasCat pallasCat = null;
+                foreach(NewPallasCat cat in wards)
+                {
+                    if(cat.PallasCatID == pallasCatID)
+                    {
+                        pallasCat = cat;
+                        break;
+                    }
+                }
+                return pallasCat;
+            }
+        }*/
+
+        public NewPallasCat this[string name]
+        {
+            get
+            {
+                NewPallasCat pallasCat = null;
+                foreach (NewPallasCat cat in wards)
+                {
+                    if (cat.Name == name)
+                    {
+                        pallasCat = cat;
+                        break;
+                    }
+                }
+                return pallasCat;
+            }
+        }
+        public void AddWard(NewPallasCat ward)
+        {
+            if (ward == null)
+            {
+                throw new ArgumentNullException(nameof(ward), "Объект не может быть null.");
+            }
+            wards.Add(ward);
+        }
+        public void RemoveWard(NewPallasCat ward)
+        {
+            if (ward == null)
+            {
+                throw new ArgumentNullException(nameof(ward), "Объект не может быть null.");
+            }
+            wards.Remove(ward);
+        }
+        public void RemoveWard(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException("Имя не может быть пустым или null.", nameof(name));
+            }
+
+            try
+            {
+                // Используем индексатор для поиска манула по имени
+                var wardToRemove = this[name]; // Здесь используется индексатор
+                wards.Remove(wardToRemove);
+            }
+            catch (NullReferenceException)
+            {
+                throw new InvalidOperationException($"Объект с именем '{name}' не найден.");
+            }
+        }
+
+        public void RemoveWard(int id)
+        {
+            // Находим объект по ID и удаляем его
+            var wardToRemove = wards.FirstOrDefault(ward => ward.PallasCatID == id);
+
+            if (wardToRemove != null)
+            {
+                wards.Remove(wardToRemove);
+            }
+            else
+            {
+                throw new InvalidOperationException($"Объект с ID '{id}' не найден.");
+            }
+        }
         abstract public string PathName { get; set; }
 
         static int nextId;
@@ -42,12 +153,15 @@ namespace Manyls {
             }
             set
             {
-                if (!string.IsNullOrEmpty(value) || value.Split().Length < 2) name = "NoName";
+                if (string.IsNullOrEmpty(value) || value.Split(' ').Length < 2)
+                { 
+                    name = "NoName"; 
+                }
                 else name = value;
             }
         }
         //Methods
-        abstract public void WriteToFile(string resum = "Резюме отсутствует.", string path = null);
+        abstract public string WriteToFile(string resum = "Резюме отсутствует.", string path = null);
         public virtual string GetFilePath(string fileExtensions = "*.TXT", string textFiles = "Text")
         {
             OpenFileDialog ofd = new OpenFileDialog();

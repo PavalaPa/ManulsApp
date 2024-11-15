@@ -23,7 +23,39 @@ namespace ManulsApp {
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (comboBox2.SelectedIndex == 0)
+            {
+                richTextBox1.Text = emps[listBox1.SelectedIndex].WriteToFile();
+            }
 
+            else if (comboBox2.SelectedIndex == 2)
+            {
+                if (emps[listBox1.SelectedIndex] is ManulVeterinarian)
+                {
+                    using (FontDialog fontDialog = new FontDialog())
+                    using (ColorDialog colorDialog = new ColorDialog())
+                    {
+                        fontDialog.Font = pictureBox1.Font;
+
+                        if (fontDialog.ShowDialog() == DialogResult.OK && colorDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            Font currFont = fontDialog.Font;
+                            Color color = colorDialog.Color;
+                            ManulVeterinarian emp = (ManulVeterinarian)emps[listBox1.SelectedIndex];
+                            // Вызываем метод NameText с выбранным шрифтом и цветом
+                            emp.NameText(pictureBox1, currFont, color);
+                        }
+                    }
+                }
+                else
+                {
+                    richTextBox1.Text = "Такого метода не существует.";
+                }
+            }
+            else
+            {
+                richTextBox1.Text = emps[listBox1.SelectedIndex].ToString();
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,5 +81,9 @@ namespace ManulsApp {
             listBox1.DisplayMember = "Name";
         }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

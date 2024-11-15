@@ -9,73 +9,6 @@ using System.Globalization;
 
 namespace Manyls {
     public sealed class ManulKeeper : Employee {
-        private List<NewPallasCat> wards = new List<NewPallasCat>();
-        public override List<NewPallasCat> Wards 
-        {
-            get => new List<NewPallasCat>(wards); // Возвращаем копию списка, чтобы избежать изменения оригинала
-            set
-            {   
-                if (value == null)
-                {
-                    //throw new ArgumentNullException(nameof(value), "Список не может быть null.");
-                    value = new List<NewPallasCat>();
-                }
-                else
-                    wards = new List<NewPallasCat>(value); // Устанавливаем новый список
-            }
-        }
-        public void AddWard(NewPallasCat ward)
-        {
-            if (ward == null)
-            {
-                throw new ArgumentNullException(nameof(ward), "Объект не может быть null.");
-            }
-            wards.Add(ward);
-        }
-
-        public void RemoveWard(NewPallasCat ward)
-        {
-            if (ward == null)
-            {
-                throw new ArgumentNullException(nameof(ward), "Объект не может быть null.");
-            }
-            wards.Remove(ward);
-        }
-        public void RemoveWard(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                throw new ArgumentException("Имя не может быть пустым или null.", nameof(name));
-            }
-
-            // Находим объект по имени и удаляем его
-            var wardToRemove = wards.FirstOrDefault(ward => ward.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-
-            if (wardToRemove != null)
-            {
-                wards.Remove(wardToRemove);
-            }
-            else
-            {
-                throw new InvalidOperationException($"Объект с именем '{name}' не найден.");
-            }
-        }
-
-        public void RemoveWard(int id)
-        {
-            // Находим объект по ID и удаляем его
-            var wardToRemove = wards.FirstOrDefault(ward => ward.PallasCatID == id);
-
-            if (wardToRemove != null)
-            {
-                wards.Remove(wardToRemove);
-            }
-            else
-            {
-                throw new InvalidOperationException($"Объект с ID '{id}' не найден.");
-            }
-        }
-
 
         private string pathName;
         public override string PathName 
@@ -100,19 +33,37 @@ namespace Manyls {
             } 
         }
 
-        public override void WriteToFile(string resum = "Резюме отсутствует.", string path = null)
+        public override string WriteToFile(string resum = "Резюме отсутствует.", string path = null)
         {
-            if (path == null) path = $"{Name}.txt";
+            string text;
+            if (string.IsNullOrWhiteSpace(path)) path = $"{Name}.txt";
             StreamWriter writer = new StreamWriter(path);
-            writer.Write($"Работник {Name} - Врач манулов. Работает в зоопарке, известном как: {Zoo}. Устроился на работу в {StartWorking}.\nДата рождения работника:{BirthDay} (Полных лет:{CalcAge(BirthDay)})\nОтветственен за следующих манулов:");
+            text = $"Работник {Name} - Врач манулов. Работает в зоопарке, известном как: {Zoo}. Устроился на работу в {StartWorking}.\nДата рождения работника:{BirthDay} (Полных лет:{CalcAge(BirthDay)})\nОтветственен за следующих манулов:";
+            writer.Write(text);
             for(int i = 0; i < Wards.Count; i++)
             {
-                if (i == Wards.Count - 1) { writer.Write($"{Wards[i].Name}.\n"); break; }
+                if (i == Wards.Count - 1) 
+                {
+                    text += $"{Wards[i].Name}.\n";
+                    writer.Write($"{Wards[i].Name}.\n"); 
+                    break; 
+                }
+                text += $"{Wards[i].Name}, ";
                 writer.Write($"{Wards[i].Name}, ");
             }
             if (resum != "Резюме отсутствует.") { writer.Write("Ресюме работника:\n"); }
             writer.WriteLine(resum);
             writer.Close();
+            return text;
+        }
+
+        public override string ToString()
+        {
+            if (string.IsNullOrEmpty(this.Name))
+            {
+                return base.ToString();
+            }
+            return this.Name;
         }
 
         //Construct
