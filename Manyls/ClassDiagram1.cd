@@ -35,24 +35,24 @@
       <FileName>FemaleManul.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Manyls.Employee">
+  <Class Name="Manyls.Employee" Collapsed="true">
     <Position X="6.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAhQAAAJAACAQAAAAMAAIEAAAAAAAAgII=</HashCode>
+      <HashCode>AAAAAAAAAAgAhQAACJAACAQCAAAMAAJEAACAAAAAgII=</HashCode>
       <FileName>Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Manyls.ManulKeeper">
+  <Class Name="Manyls.ManulKeeper" Collapsed="true">
     <Position X="6" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAIAAAACAACAAAAAABEAACAAAAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAMAAAACAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>ManulKeeper.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Manyls.ManulVeterinarian">
+  <Class Name="Manyls.ManulVeterinarian" Collapsed="true">
     <Position X="7.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAMAAAACAACAAAAAAAEAACAAAAAwAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAMAAAACAAAAAAAAAAEAAAAAAAAQAA=</HashCode>
       <FileName>ManulVeterinarian.cs</FileName>
     </TypeIdentifier>
   </Class>

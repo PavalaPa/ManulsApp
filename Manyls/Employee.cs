@@ -103,7 +103,7 @@ namespace Manyls {
             try
             {
                 // Используем индексатор для поиска манула по имени
-                var wardToRemove = this[name]; // Здесь используется индексатор
+                var wardToRemove = this[name];
                 wards.Remove(wardToRemove);
             }
             catch (NullReferenceException)
