@@ -12,6 +12,7 @@ namespace Manyls {
         {
             Wards = wards;
         }
+
         public void NameText(PictureBox box, Font currFont, Color color)
         {
             using (Graphics g = Graphics.FromHwnd(box.Handle))

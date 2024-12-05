@@ -37,6 +37,7 @@
             this.лр8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.лр9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.лр10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.лР11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,8 @@
             this.лр7ToolStripMenuItem,
             this.лр8ToolStripMenuItem,
             this.лр9ToolStripMenuItem,
-            this.лр10ToolStripMenuItem});
+            this.лр10ToolStripMenuItem,
+            this.лР11ToolStripMenuItem});
             this.лр1ToolStripMenuItem.Name = "лр1ToolStripMenuItem";
             this.лр1ToolStripMenuItem.Size = new System.Drawing.Size(47, 27);
             this.лр1ToolStripMenuItem.Text = "Лр";
@@ -131,6 +133,13 @@
             this.лр10ToolStripMenuItem.Text = "Лр10";
             this.лр10ToolStripMenuItem.Click += new System.EventHandler(this.лр10ToolStripMenuItem_Click);
             // 
+            // лР11ToolStripMenuItem
+            // 
+            this.лР11ToolStripMenuItem.Name = "лР11ToolStripMenuItem";
+            this.лР11ToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.лР11ToolStripMenuItem.Text = "ЛР11";
+            this.лР11ToolStripMenuItem.Click += new System.EventHandler(this.лР11ToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -160,5 +169,6 @@
         private System.Windows.Forms.ToolStripMenuItem лр8ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem лр9ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem лр10ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem лР11ToolStripMenuItem;
     }
 }

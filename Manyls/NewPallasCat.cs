@@ -263,14 +263,20 @@ namespace Manyls {
         }
 
         //public const string Zoo = "Зоопарк";
+
+        //ЛР 11
+        public string TimeToEat(DateTime feedingTime, IFeedingManul feedingManul)
+        {
+            return feedingManul.FeedingManul(feedingTime);
+        }
+
+        public string TimeToRest(DateTime restTime, IRestDay restDay)
+        {
+            return restDay.RestDay(restTime);
+        }
+
     }
-    //Methods
-    /*
-    public void ShowPhoto(PictureBox box)
-    {
-        
-    }
-    */
+
     public struct MyColor {
         public int R;
         public int G;

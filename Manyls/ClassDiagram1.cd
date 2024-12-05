@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Manyls.NewPallasCat">
+  <Class Name="Manyls.NewPallasCat" Collapsed="true">
     <Position X="4.25" Y="1.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgABQEIIFCACAQAgAAIAAoEAAAIAAABAQI=</HashCode>
+      <HashCode>AAAAAAAAAAgABQEIKFCACAQAgAAIAAoEAAAIAAABAQI=</HashCode>
       <FileName>NewPallasCat.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -14,7 +14,7 @@
     <Position X="3.5" Y="0.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Manyls.Zoo">
+  <Class Name="Manyls.Zoo" Collapsed="true">
     <Position X="2.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAABAQAAAAAAAAAAAA=</HashCode>
@@ -22,14 +22,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Manyls.MedicalHistory" Collapsed="true">
-    <Position X="6.5" Y="5.75" Width="1.5" />
+    <Position X="4.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAEAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MedicalHistory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Manyls.FemaleManul">
-    <Position X="2.25" Y="4" Width="1.5" />
+  <Class Name="Manyls.FemaleManul" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgBAAEAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FemaleManul.cs</FileName>
@@ -38,7 +38,7 @@
   <Class Name="Manyls.Employee" Collapsed="true">
     <Position X="6.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAhQAACJAACAQCAAAMAAJEAACAAAAAgII=</HashCode>
+      <HashCode>AAAAAAAAAAgAhQAACJAACAQCAAAMAAJEAACAAEAAgII=</HashCode>
       <FileName>Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -56,12 +56,33 @@
       <FileName>ManulVeterinarian.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Struct Name="Manyls.MyColor">
+  <Struct Name="Manyls.MyColor" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAEAAQA=</HashCode>
       <FileName>NewPallasCat.cs</FileName>
     </TypeIdentifier>
   </Struct>
+  <Interface Name="Manyls.IFeedingManul" Collapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>IFeedingManul.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Manyls.ICleaningEnclosure" Collapsed="true">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICleaningEnclosure.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Manyls.IRestDay" Collapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IRestDay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9.13" />
 </ClassDiagram>

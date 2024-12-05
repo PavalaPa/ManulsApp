@@ -38,28 +38,14 @@ namespace Manyls {
             }
         }
 
+        public delegate void WardsInfo(string NameOfCurManul); //указатель на метод
+        public event WardsInfo Info; //объявляем событие 
+
         public NewPallasCat this[int index]
         {
             get => wards[index];
             set => wards[index] = value;
         }
-
-        /*public NewPallasCat this[int pallasCatID]
-        {
-            get
-            {
-                NewPallasCat pallasCat = null;
-                foreach(NewPallasCat cat in wards)
-                {
-                    if(cat.PallasCatID == pallasCatID)
-                    {
-                        pallasCat = cat;
-                        break;
-                    }
-                }
-                return pallasCat;
-            }
-        }*/
 
         public NewPallasCat this[string name]
         {
@@ -81,23 +67,28 @@ namespace Manyls {
         {
             if (ward == null)
             {
-                throw new ArgumentNullException(nameof(ward), "Объект не может быть null.");
+                Info.Invoke("Было введено пустое значение. ");
+                return;
             }
             wards.Add(ward);
+            Info.Invoke($"В список подопечных был добавлен новый манул с именем {ward.Name}. ");
         }
         public void RemoveWard(NewPallasCat ward)
         {
             if (ward == null)
             {
-                throw new ArgumentNullException(nameof(ward), "Объект не может быть null.");
+                Info.Invoke("Было введено пустое значение. ");
+                return;
             }
             wards.Remove(ward);
+            Info.Invoke($"Из списка подопечных был удален манул с именем {ward.Name}. ");
         }
         public void RemoveWard(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentException("Имя не может быть пустым или null.", nameof(name));
+                Info.Invoke("Было введено пустое значение. ");
+                return;
             }
 
             try
@@ -105,10 +96,11 @@ namespace Manyls {
                 // Используем индексатор для поиска манула по имени
                 var wardToRemove = this[name];
                 wards.Remove(wardToRemove);
+                Info.Invoke($"Из списка подопечных был удален манул с именем {name}. ");
             }
             catch (NullReferenceException)
             {
-                throw new InvalidOperationException($"Объект с именем '{name}' не найден.");
+                throw new InvalidOperationException($"Манул с именем '{name}' не найден.");
             }
         }
 
@@ -120,10 +112,12 @@ namespace Manyls {
             if (wardToRemove != null)
             {
                 wards.Remove(wardToRemove);
+                Info.Invoke($"Из списка подопечных был удален манул с именем {wardToRemove.Name}. ");
             }
             else
             {
-                throw new InvalidOperationException($"Объект с ID '{id}' не найден.");
+                Info.Invoke($"Было введено пустое значение или объект с id = {id} не найден. ");
+                return;
             }
         }
         abstract public string PathName { get; set; }
