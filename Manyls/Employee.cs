@@ -129,8 +129,8 @@ namespace Manyls {
             get { return iD; }
             private set { iD = value; }
         }
-
-        private string name;
+        public virtual string Name { get; set; }
+        /*private string name;
         public virtual string Name
         {
             get
@@ -153,7 +153,7 @@ namespace Manyls {
                 }
                 else name = value;
             }
-        }
+        }*/
         //Methods
         abstract public string WriteToFile(string resum = "Резюме отсутствует.", string path = null);
         public virtual string GetFilePath(string fileExtensions = "*.TXT", string textFiles = "Text")
@@ -221,6 +221,10 @@ namespace Manyls {
             return age;
         }
         //Сonstructors
+        public Employee(string name)
+        {
+            Name = name;
+        }
         public Employee(string name, DateTime bday, string zoo, DateTime startWorking) {
             ID = Interlocked.Increment(ref nextId);
             Name = name;

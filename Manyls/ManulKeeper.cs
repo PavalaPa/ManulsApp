@@ -67,6 +67,7 @@ namespace Manyls {
         }
 
         //Construct
+        public ManulKeeper(string name) : base(name) { }
         public ManulKeeper(string name, DateTime bday,string zoo, string path, DateTime startWorking): base(name, bday, zoo, startWorking) 
         {
             PathName = path;

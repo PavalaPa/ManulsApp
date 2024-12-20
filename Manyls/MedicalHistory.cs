@@ -12,6 +12,7 @@ namespace Manyls {
         public Dictionary<DateTime, string> OngoingDiseases;
 
         // Конструкторы
+        
         public MedicalHistory() : base() { }
 
         public MedicalHistory(string name, DateTime birthDay, bool isFem, string clinic, List<string> attendingPhys) : base(name, birthDay, isFem) 

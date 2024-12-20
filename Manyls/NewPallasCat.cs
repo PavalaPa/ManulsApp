@@ -45,6 +45,31 @@ namespace Manyls {
                 NewPallasCat.BackColor = new MyColor(255, 0, 0); // Красный цвет
             }
         }
+        //Ассоциация
+        public Zoo zoo;
+        //Агрегация
+        public List<Employee> Employees { get; set; }
+        public NewPallasCat(int age, string name, List<Employee> emps)
+        {
+            PallasCatID = Interlocked.Increment(ref nextId);
+            Age = age;
+            Name = name;
+            Employees = emps;
+        }
+        //Композиция
+        MedHistory medHistory;
+        public string GetMedName()
+        {
+            return medHistory.veterinaryСlinic;
+        }
+        public NewPallasCat(int age, string name, bool isFem, string clinic)
+        {
+            PallasCatID = Interlocked.Increment(ref nextId);
+            Age = age;
+            Name = name;
+            this.medHistory = new MedHistory(clinic);
+        }
+
         public NewPallasCat()
         {
             PallasCatID = Interlocked.Increment(ref nextId);

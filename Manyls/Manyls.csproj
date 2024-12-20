@@ -55,6 +55,7 @@
     <Compile Include="IRestDay.cs" />
     <Compile Include="ManulKeeper.cs" />
     <Compile Include="ManulVeterinarian.cs" />
+    <Compile Include="MedHistory.cs" />
     <Compile Include="MedicalHistory.cs" />
     <Compile Include="NewPallasCat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

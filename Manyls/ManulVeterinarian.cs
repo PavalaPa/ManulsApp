@@ -8,6 +8,7 @@ using System.Drawing;
 
 namespace Manyls {
     public class ManulVeterinarian : Employee {
+        public ManulVeterinarian(string name) : base(name) { }
         public ManulVeterinarian(string name, DateTime bday, string zoo, DateTime startWorking, List<NewPallasCat> wards) : base(name, bday, zoo, startWorking)
         {
             Wards = wards;
