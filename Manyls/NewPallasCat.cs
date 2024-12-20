@@ -300,6 +300,13 @@ namespace Manyls {
             return restDay.RestDay(restTime);
         }
 
+        public Zoo Zoo1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
     public struct MyColor {

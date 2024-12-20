@@ -110,5 +110,14 @@ namespace ManulsApp {
                 richTextBox3.Text += $"{emp.GetType()} {emp.Name}\n";
             }
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            richTextBox3.Text = $"Манул удален. Работники, у которых теперь нет манула:\n";
+            foreach (Employee emp in empls)
+            {
+                richTextBox3.Text += $"{emp.GetType()} {emp.Name}\n";
+            }
+        }
     }
 }

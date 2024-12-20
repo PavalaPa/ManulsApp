@@ -39,6 +39,7 @@ namespace Manyls {
         }
 
         public delegate void WardsInfo(string NameOfCurManul); //указатель на метод
+        //public delegate void WardsInfo(object obj, EmployeeEvents e);
         public event WardsInfo Info; //объявляем событие 
 
         public NewPallasCat this[int index]
@@ -68,10 +69,11 @@ namespace Manyls {
             if (ward == null)
             {
                 Info.Invoke("Было введено пустое значение. ");
+                //Info.Invoke(this, new EmployeeEvents("Было введено пустое значение. ", null));
                 return;
             }
             wards.Add(ward);
-            Info.Invoke($"В список подопечных был добавлен новый манул с именем {ward.Name}. ");
+            Info?.Invoke($"В список подопечных был добавлен новый манул с именем {ward.Name}. ");
         }
         public void RemoveWard(NewPallasCat ward)
         {
@@ -81,7 +83,7 @@ namespace Manyls {
                 return;
             }
             wards.Remove(ward);
-            Info.Invoke($"Из списка подопечных был удален манул с именем {ward.Name}. ");
+            Info?.Invoke($"Из списка подопечных был удален манул с именем {ward.Name}. ");
         }
         public void RemoveWard(string name)
         {
@@ -96,7 +98,7 @@ namespace Manyls {
                 // Используем индексатор для поиска манула по имени
                 var wardToRemove = this[name];
                 wards.Remove(wardToRemove);
-                Info.Invoke($"Из списка подопечных был удален манул с именем {name}. ");
+                Info?.Invoke($"Из списка подопечных был удален манул с именем {name}. ");
             }
             catch (NullReferenceException)
             {
@@ -112,11 +114,11 @@ namespace Manyls {
             if (wardToRemove != null)
             {
                 wards.Remove(wardToRemove);
-                Info.Invoke($"Из списка подопечных был удален манул с именем {wardToRemove.Name}. ");
+                Info?.Invoke($"Из списка подопечных был удален манул с именем {wardToRemove.Name}. ");
             }
             else
             {
-                Info.Invoke($"Было введено пустое значение или объект с id = {id} не найден. ");
+                Info?.Invoke($"Было введено пустое значение или объект с id = {id} не найден. ");
                 return;
             }
         }
@@ -129,7 +131,22 @@ namespace Manyls {
             get { return iD; }
             private set { iD = value; }
         }
-        public virtual string Name { get; set; }
+        public delegate void EventHandler(string NameOfCurManul);
+        public event EventHandler NameChanged;
+
+        private string name;
+        public virtual string Name
+        {
+            get => name;
+            set
+            {
+                if (name != value)
+                {
+                    NameChanged?.Invoke($"Имя работника было изменено c {name} на {value}");
+                    name = value;
+                }
+            }
+        }
         /*private string name;
         public virtual string Name
         {
