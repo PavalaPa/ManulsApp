@@ -11,6 +11,17 @@ using System.Windows.Forms;
 namespace Manyls {
     abstract public class Employee {
         //Properties
+
+        //Ассоциация
+        public Zoo AssociatedZoo { get; set; }
+        public List<string> CompletedTasks { get; private set; } = new List<string>();
+        public void PerformTask(string task)
+        {
+            if (AssociatedZoo != null && AssociatedZoo.AssignTask(this, task))
+            {
+                CompletedTasks.Add(task); // Сотрудник фиксирует выполненную задачу как свою.
+            }
+        }
         public virtual string Zoo { get; set; } = "Неизвестный зоопарк";
         public DateTime BirthDay { get; set; }
         public DateTime StartWorking { get; set; }
@@ -250,6 +261,20 @@ namespace Manyls {
             StartWorking = startWorking;
         }
 
+        public NewPallasCat NewPallasCat
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
+        public Zoo AssociatedZoo1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

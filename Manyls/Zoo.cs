@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Manyls {
     public class Zoo {
@@ -15,6 +16,37 @@ namespace Manyls {
         private int m_id = -1;
         public int ID { get { return m_id; } set { m_id = value; } }
         public string Name;
-        public static int HowManyManulas = 0;
+
+        //Ассоциации
+        public List<Employee> Employees { get; set; }
+
+        public bool AssignTask(Employee employee, string task)
+        {
+            if (employee is ManulVeterinarian)
+            {
+                MessageBox.Show($"{employee.Name} выполняет задачу: {task}");
+                return true;
+            }
+            if (employee is ManulKeeper) 
+            {
+                MessageBox.Show($"{employee.Name} выполняет задачу: {task}");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show($"Сотрудник не работает с манулами.");
+                return false;
+            }
+        }
+        public List<NewPallasCat> PallasCats { get; set; }
+        public int CountCats => PallasCats.Count; // Геттер вычисляет количество элементов в списке
+
+        public NewPallasCat NewPallasCat
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

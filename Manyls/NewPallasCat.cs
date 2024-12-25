@@ -14,23 +14,6 @@ using static System.Net.Mime.MediaTypeNames;
 namespace Manyls {
 
     public class NewPallasCat {
-        //Constructor
-        //public NewPallasCat(){ }
-        //public NewPallasCat(string name) => this.name = name;
-        /*
-        // Поля для лр 4
-        public string Name_lr4;
-        public string Zoo_lr4;
-        public DateTime BirthDay_lr4;
-
-        public NewPallasCat(string n_lr4, string z_lr4, DateTime b_lr4)
-        {
-            Name_lr4 = n_lr4;
-            Zoo_lr4 = z_lr4;
-            BirthDay_lr4 = b_lr4;
-        }
-
-        */
 
         public static readonly MyColor BackColor;
         static NewPallasCat()
@@ -45,8 +28,6 @@ namespace Manyls {
                 NewPallasCat.BackColor = new MyColor(255, 0, 0); // Красный цвет
             }
         }
-        //Ассоциация
-        public Zoo zoo;
         //Агрегация
         public List<Employee> Employees { get; set; }
         public NewPallasCat(int age, string name, List<Employee> emps)
