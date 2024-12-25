@@ -16,11 +16,11 @@ namespace ManulsApp {
         {
             InitializeComponent();
         }
-        List<NewPallasCat> Cats = new List<NewPallasCat>();
+        List<Ы> Cats = new List<Ы>();
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string r = "Котики манулы хорошие люблю пушистых котов...\n";
-            if (listBox1.SelectedItem is NewPallasCat selectedCat)
+            if (listBox1.SelectedItem is Ы selectedCat)
             {
                 pictureBox1.Image = selectedCat.ImageBitmap;
                 selectedCat.ShowPhoto(pictureBox3);
@@ -40,10 +40,10 @@ namespace ManulsApp {
         
         private void Form7_Load(object sender, EventArgs e)
         {
-            Cats.Add(new NewPallasCat("Ева", new DateTime(12/07/2010), "Новосибирский зоопарк", null));
+            Cats.Add(new Ы("Ева", new DateTime(12/07/2010), "Новосибирский зоопарк", null));
             Cats.Add(new FemaleManul("Ева", new DateTime(12 / 07 / 2010), "Новосибирский зоопарк", null));
             Cats.Add(new FemaleManul("Намика", new DateTime(07 / 07 / 2022), "N зоопарк", "C:\\Users\\valentinka\\Desktop\\Дристать вечно\\Manul_kitten.jpg"));
-            Cats.Add(new NewPallasCat("Боул", new DateTime(10 / 07 / 2013), "Новосибирский зоопарк", "C:\\Users\\valentinka\\Desktop\\Дристать вечно\\yS5xbLSgRAY.jpg"));
+            Cats.Add(new Ы("Боул", new DateTime(10 / 07 / 2013), "Новосибирский зоопарк", "C:\\Users\\valentinka\\Desktop\\Дристать вечно\\yS5xbLSgRAY.jpg"));
             listBox1.DataSource = Cats;
             listBox1.DisplayMember = "Name";
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;

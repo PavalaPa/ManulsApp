@@ -35,7 +35,7 @@ namespace ManulsApp {
 
         private void button3_Click(object sender, EventArgs e)
         {
-            emp.AddWard(new NewPallasCat(textBox1.Text));
+            emp.AddWard(new Ы(textBox1.Text));
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace ManulsApp {
 
         private void button4_Click(object sender, EventArgs e)
         {
-            emp.RemoveWard(new NewPallasCat(textBox1.Text));
+            emp.RemoveWard(new Ы(textBox1.Text));
         }
     }
 }

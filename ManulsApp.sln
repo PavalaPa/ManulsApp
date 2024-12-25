@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManulsApp", "ManulsApp\Manu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manyls", "Manyls\Manyls.csproj", "{D4D72339-13E3-483E-ABF5-D838D67EE922}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coursework", "Coursework\Coursework.csproj", "{54423F1D-54B3-41A3-9297-A7352C8B33A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D4D72339-13E3-483E-ABF5-D838D67EE922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4D72339-13E3-483E-ABF5-D838D67EE922}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4D72339-13E3-483E-ABF5-D838D67EE922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54423F1D-54B3-41A3-9297-A7352C8B33A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54423F1D-54B3-41A3-9297-A7352C8B33A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54423F1D-54B3-41A3-9297-A7352C8B33A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54423F1D-54B3-41A3-9297-A7352C8B33A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

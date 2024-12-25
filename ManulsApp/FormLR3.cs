@@ -18,7 +18,7 @@ namespace ManulsApp {
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NewPallasCat p1 = new NewPallasCat();
+            Ы p1 = new Ы();
             if (textBox1.Text != "") p1.Name = textBox1.Text;
             p1.Age = (int)numericUpDown1.Value;
             p1.BirthDay = dateTimePicker1.Value;

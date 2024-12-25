@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ManulsApp {
     public partial class Form5 : Form {
-        List<NewPallasCat> Pallas = new List<NewPallasCat>();
+        List<Ы> Pallas = new List<Ы>();
         public Form5()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace ManulsApp {
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            Pallas.Add(new NewPallasCat("Тимофей", new DateTime(2020, 6, 11), "Московский зоопарк", null, false));
+            Pallas.Add(new Ы("Тимофей", new DateTime(2020, 6, 11), "Московский зоопарк", null, false));
             listBox1.DataSource = Pallas;
             listBox1.DisplayMember = "Name";
             label5.DataBindings.Add("Text", Pallas, "PallasCatID");
@@ -38,7 +38,7 @@ namespace ManulsApp {
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Pallas.Add(new NewPallasCat(textBox1.Text, dateTimePicker1.Value, textBox2.Text, null, checkBox1.Checked));
+            Pallas.Add(new Ы(textBox1.Text, dateTimePicker1.Value, textBox2.Text, null, checkBox1.Checked));
             listBox1.DataSource = null;
             listBox1.DataSource = Pallas;
             listBox1.DisplayMember = "Name";
@@ -46,14 +46,14 @@ namespace ManulsApp {
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var NewPallas = new NewPallasCat();
+            var NewPallas = new Ы();
             var path = NewPallas.GetFilePath();
             richTextBox1.Text = NewPallas.ReadFromFile(path);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var NewPallas = new NewPallasCat(textBox1.Text, dateTimePicker1.Value, textBox2.Text, null, checkBox1.Checked);
+            var NewPallas = new Ы(textBox1.Text, dateTimePicker1.Value, textBox2.Text, null, checkBox1.Checked);
             var path = NewPallas.GetFilePath();
             NewPallas.WriteToFile(path);
         }
