@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Manyls {
-    public interface IRestDay : IFeedingManul {
+    public interface IRestDay : IFeeding {
         string RestDay(DateTime? timeOfFeeding);
     }
 }

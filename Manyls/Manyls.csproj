@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capybara.cs" />
+    <Compile Include="Eclosure.cs" />
     <Compile Include="EmployeeEvents.cs" />
     <Compile Include="FeedCleenRest.cs" />
     <Compile Include="Employee.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="ICleaningEnclosure.cs" />
     <Compile Include="IFeedingManul.cs" />
     <Compile Include="ICurrentActions.cs" />
+    <Compile Include="ITransfer.cs" />
     <Compile Include="IRestDay.cs" />
     <Compile Include="ManulKeeper.cs" />
     <Compile Include="ManulVeterinarian.cs" />

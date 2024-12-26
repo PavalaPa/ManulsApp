@@ -8,7 +8,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Globalization;
 
 namespace Manyls {
-    public sealed class ManulKeeper : Employee {
+    public sealed class ManulKeeper : Employee, ICleaningEnclosure {
 
         private string pathName;
         public override string PathName 
@@ -64,6 +64,11 @@ namespace Manyls {
                 return base.ToString();
             }
             return this.Name;
+        }
+
+        public void CleaningEnclosure(DateTime timeOfCleaning)
+        {
+            MessageBox.Show($"Кипер манулов {this.Name} почистил все вольеры {timeOfCleaning}.");
         }
 
         //Construct

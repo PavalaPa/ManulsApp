@@ -41,12 +41,9 @@ namespace Manyls {
         public List<NewPallasCat> PallasCats { get; set; }
         public int CountCats => PallasCats.Count; // Геттер вычисляет количество элементов в списке
 
-        public NewPallasCat NewPallasCat
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        //для диаграммы классов
+        public Employee Employees_ { get; set; }
+
+        public NewPallasCat NewPallasCat_ { get; set; }
     }
 }

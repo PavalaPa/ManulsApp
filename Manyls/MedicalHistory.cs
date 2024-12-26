@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 
 namespace Manyls {
-    public class MedicalHistory : NewPallasCat {
+    public class MedicalHistory {
         // Поля и свойства класса
         public string veterinaryСlinic;
         public List<string> AttendingPhysicians;
@@ -13,14 +13,9 @@ namespace Manyls {
 
         // Конструкторы
         
-        public MedicalHistory() : base() { }
+        public MedicalHistory() { }
 
-        public MedicalHistory(string name, DateTime birthDay, bool isFem, string clinic, List<string> attendingPhys) : base(name, birthDay, isFem) 
-        {
-            this.veterinaryСlinic = clinic;
-            this.AttendingPhysicians = attendingPhys;
-        }
-        public MedicalHistory(string name, DateTime birthDay, string zoo, string pathFoto, bool isFem, string clinic, List<string> attendingPhys) : base(name, birthDay, zoo, pathFoto, isFem) 
+        public MedicalHistory(string clinic, List<string> attendingPhys) 
         {
             this.veterinaryСlinic = clinic;
             this.AttendingPhysicians = attendingPhys;

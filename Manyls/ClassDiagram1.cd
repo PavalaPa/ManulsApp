@@ -7,26 +7,26 @@
   <Class Name="Manyls.Zoo" Collapsed="true">
     <Position X="2" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAABAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAACAAAAAAgABAAAAAAAQACSAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Zoo.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Manyls.MedicalHistory" Collapsed="true">
-    <Position X="2.25" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AACAAEAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MedicalHistory.cs</FileName>
-    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Employees_" />
+      <Property Name="NewPallasCat_" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Manyls.FemaleManul" Collapsed="true">
-    <Position X="2.25" Y="3.25" Width="1.5" />
+    <Position X="3.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgBAAEAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FemaleManul.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Manyls.Employee" Collapsed="true">
-    <Position X="6.75" Y="2" Width="1.5" />
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <NestedTypes>
       <Delegate Name="Manyls.Employee.WardsInfo" Collapsed="true">
         <TypeIdentifier>
@@ -39,88 +39,108 @@
         </TypeIdentifier>
       </Delegate>
     </NestedTypes>
+    <AssociationLine Name="AssociatedZoo" Type="Manyls.Zoo" ManuallyRouted="true">
+      <Path>
+        <Point X="7.094" Y="2.75" />
+        <Point X="7.094" Y="1.625" />
+        <Point X="5.583" Y="1.625" Type="JumpStart" />
+        <Point X="5.417" Y="1.625" Type="JumpEnd" />
+        <Point X="1.875" Y="1.625" />
+        <Point X="1.875" Y="2.313" />
+        <Point X="2" Y="2.313" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAhQAACJAACAQCAAAMAAJEAACAAEAIgII=</HashCode>
+      <HashCode>AAAAAAAAAAgAhQAACJEACAQCAAAMAAJEAACAAEgIhII=</HashCode>
       <FileName>Employee.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AssociatedZoo" />
+      <Property Name="wards_" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Manyls.ManulKeeper" Collapsed="true">
-    <Position X="6" Y="3" Width="1.5" />
+    <Position X="6" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAMAAAACAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAMAAAACAgAAAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>ManulKeeper.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Manyls.ManulVeterinarian" Collapsed="true">
-    <Position X="7.5" Y="3" Width="1.5" />
+    <Position X="7.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAMAAAACAAAAAAAAAAEAAAAAAAAQAA=</HashCode>
       <FileName>ManulVeterinarian.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Manyls.Feeding" Collapsed="true">
-    <Position X="11.5" Y="2" Width="1.5" />
+  <Class Name="Manyls.MedHistory" Collapsed="true">
+    <Position X="2.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>FeedCleenRest.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MedHistory.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Manyls.Cleening" Collapsed="true">
-    <Position X="10" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>FeedCleenRest.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Manyls.Rest" Collapsed="true">
-    <Position X="8.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAAAABAAAAQAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>FeedCleenRest.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Manyls.NewPallasCat" Collapsed="true">
-    <Position X="4.75" Y="2" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Nested Types" Collapsed="false" />
-    </Compartments>
+    <Position X="3.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgABQEIKFCgCQQAigAJAAoEAAAIAAABAQI=</HashCode>
+      <HashCode>AAAAAAAAAAgABQEoKFChCQQBiAAIAAoEACAIAAABAQY=</HashCode>
       <FileName>NewPallasCat.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Zoo1" />
+      <Property Name="Eclosure" />
     </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Manyls.Eclosure" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAABBAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Eclosure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Manyls.Capybara" Collapsed="true">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAACAAAAAAAAQ=</HashCode>
+      <FileName>Capybara.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Struct Name="Manyls.MyColor" Collapsed="true">
-    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Position X="2" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAEAAQA=</HashCode>
       <FileName>NewPallasCat.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Interface Name="Manyls.IFeedingManul" Collapsed="true">
-    <Position X="7.5" Y="4.25" Width="1.5" />
+  <Interface Name="Manyls.IFeeding" Collapsed="true">
+    <Position X="2" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IFeedingManul.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Manyls.ICleaningEnclosure">
-    <Position X="9.25" Y="4.25" Width="2.5" />
+  <Interface Name="Manyls.ICleaningEnclosure" Collapsed="true">
+    <Position X="3.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ICleaningEnclosure.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Manyls.IRestDay" Collapsed="true">
-    <Position X="5.5" Y="4.25" Width="1.5" />
+    <Position X="2" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IRestDay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Manyls.ITransfer" Collapsed="true">
+    <Position X="2" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAACAAAAAAAAQ=</HashCode>
+      <FileName>ITransfer.cs</FileName>
+      <NewMemberFileName>Itransfer.cs</NewMemberFileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9.13" />

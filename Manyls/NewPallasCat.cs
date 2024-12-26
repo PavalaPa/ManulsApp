@@ -13,7 +13,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Manyls {
 
-    public class NewPallasCat {
+    public class NewPallasCat: ITransfer, IFeeding, IRestDay {
 
         public static readonly MyColor BackColor;
         static NewPallasCat()
@@ -55,19 +55,6 @@ namespace Manyls {
         {
             PallasCatID = Interlocked.Increment(ref nextId);
         }
-        public NewPallasCat(string name)
-        {
-            PallasCatID = Interlocked.Increment(ref nextId);
-            this.Name = name;
-        }
-        public NewPallasCat(string name, DateTime birth, bool isFem)
-        {
-            PallasCatID = Interlocked.Increment(ref nextId);
-            this.Name = name;
-            this.BirthDay = birth;
-            this.IsFem = isFem;
-            this.Age = CalcAge(birth);
-        }
         public NewPallasCat(int age, string name, string pathName)
         {
             PallasCatID = Interlocked.Increment(ref nextId);
@@ -75,13 +62,7 @@ namespace Manyls {
             Name = name;
             PathName = pathName;
         }
-        public NewPallasCat(int age, string name)
-        {
-            PallasCatID = Interlocked.Increment(ref nextId);
-            this.Age = age;
-            this.Name = name;
-            //this.PathName = string.Empty;
-        }
+
         public NewPallasCat(string name, DateTime dateTime, string zoo, string pathName, bool isFem)
         {
             PallasCatID = Interlocked.Increment(ref nextId);
@@ -92,14 +73,64 @@ namespace Manyls {
             this.IsFem = isFem;
             Age = CalcAge(dateTime);
         }
-        public NewPallasCat(string name, DateTime dateTime, string zoo, string pathName)
+        /// 
+        ///                                     РЕАЛИЗАЦИЯ ИНТЕРФЕЙСОВ
+        /// 
+        public Eclosure Eclosure { get; set; }
+        public NewPallasCat(string name, DateTime dateTime, string zoo, string pathName, bool isFem, Eclosure eclosure)
         {
             PallasCatID = Interlocked.Increment(ref nextId);
             this.Name = name;
             this.Zoo = zoo;
             this.BirthDay = dateTime;
             this.PathName = pathName;
+            this.IsFem = isFem;
+            Age = CalcAge(dateTime);
+            Eclosure = eclosure;
         }
+
+        public bool Transfer()
+        {
+            if (Eclosure == null) 
+            {
+                MessageBox.Show("Невозможно прочитать данные о вольере, т.к. он не был добавлен.");
+                return false;
+            }
+            MessageBox.Show($"{this.Name} проживает в вольере с ID: {Eclosure.ID}.");
+            return true;
+        }
+
+        public void TransferEclosure(ITransfer someAnimal = null, Eclosure setEclosure = null, bool Exchange = true)
+        {
+            if (Exchange)
+            {
+                if (Eclosure == null)
+                {
+                    MessageBox.Show($"Невозможно поменять животных вольерами, т.к. вольер кота {this.Name} не назначен.");
+                    return;
+                }
+                if (!someAnimal.Transfer())
+                {
+                    MessageBox.Show($"Невозможно поменять животных вольерами, т.к. вольер животного {someAnimal.Name} не назначен.");
+                    return;
+                }
+                var curEclosure = someAnimal.Eclosure;
+                someAnimal.Eclosure = this.Eclosure;
+                this.Eclosure = curEclosure;
+                MessageBox.Show($"Обмен вольерами произведен! Кот {this.Name} теперь проживает в вольере {this.Eclosure}, а животное {someAnimal.Name} теперь проживает в {someAnimal.Eclosure}.");
+            }
+            else
+            {
+                if (setEclosure == null)
+                {
+                    MessageBox.Show($"Невозможно поменять вольер кота {this.Name}, т.к. менять не на что.");
+                    return;
+                }
+                this.Eclosure = setEclosure;
+                MessageBox.Show($"Обмен вольерами произведен! Кот {this.Name} теперь проживает в вольере {this.Eclosure}.");
+            }
+        }
+
         //Properties
         static int nextId;
         int pallasCatID;
@@ -190,6 +221,7 @@ namespace Manyls {
                 return new Bitmap(pathName);
             }
         }
+
         public void WriteToFile(bool setInfo = false, string text = "")
         {
             StreamWriter writer = new StreamWriter(this.Name + ".txt");
@@ -268,10 +300,8 @@ namespace Manyls {
             return age;
         }
 
-        //public const string Zoo = "Зоопарк";
-
-        //ЛР 11
-        public string TimeToEat(DateTime feedingTime, IFeedingManul feedingManul)
+        // ИТЕРФЕЙСЫ
+        public string TimeToEat(DateTime feedingTime, IFeeding feedingManul)
         {
             return feedingManul.FeedingManul(feedingTime);
         }
@@ -281,12 +311,19 @@ namespace Manyls {
             return restDay.RestDay(restTime);
         }
 
-        public Zoo Zoo1
+        public string FeedingManul(DateTime timeOfFeeding)
         {
-            get => default;
-            set
-            {
-            }
+            throw new NotImplementedException();
+        }
+
+        string IRestDay.RestDay(DateTime? timeOfFeeding)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IFeeding.FeedingManul(DateTime timeOfFeeding)
+        {
+            throw new NotImplementedException();
         }
     }
 

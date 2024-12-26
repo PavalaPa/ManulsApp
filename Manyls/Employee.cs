@@ -261,20 +261,7 @@ namespace Manyls {
             StartWorking = startWorking;
         }
 
-        public NewPallasCat NewPallasCat
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Zoo AssociatedZoo1
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        // Для диаграммы классов
+        public NewPallasCat wards_ { get; set; }
     }
 }

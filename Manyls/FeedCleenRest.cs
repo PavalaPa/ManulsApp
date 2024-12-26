@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Manyls {
-    public class Feeding : IFeedingManul, ICurrentActions {
+    public class Feeding : IFeeding, ICurrentActions {
         public DateTime ActionTime { get ; set ; }
 
         public string FeedingManul(DateTime timeOfFeeding)
@@ -19,6 +19,11 @@ namespace Manyls {
         public string CleaningEnclosure(DateTime timeOfCleaning)
         {
             return $"{timeOfCleaning} происходила уборка вольера манула ";
+        }
+
+        void ICleaningEnclosure.CleaningEnclosure(DateTime timeOfCleaning)
+        {
+            throw new NotImplementedException();
         }
     }
     public class Rest : IRestDay, ICurrentActions {

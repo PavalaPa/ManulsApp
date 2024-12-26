@@ -40,10 +40,11 @@
             this.Photo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NAME = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Age = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Hash = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BirthDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StartWorking = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.buttonDel = new System.Windows.Forms.Button();
+            this.Zoo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -160,8 +161,9 @@
             this.Photo,
             this.ID,
             this.NAME,
-            this.Age,
-            this.Hash});
+            this.BirthDay,
+            this.Zoo,
+            this.StartWorking});
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.746268F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(9, 61);
@@ -186,14 +188,15 @@
             this.NAME.Text = "Name";
             this.NAME.Width = 123;
             // 
-            // Age
+            // BirthDay
             // 
-            this.Age.Text = "Age";
+            this.BirthDay.Text = "BirthDay";
             // 
-            // Hash
+            // StartWorking
             // 
-            this.Hash.Text = "Hash";
-            this.Hash.Width = 123;
+            this.StartWorking.DisplayIndex = 4;
+            this.StartWorking.Text = "StartWorking";
+            this.StartWorking.Width = 123;
             // 
             // label4
             // 
@@ -215,6 +218,11 @@
             this.buttonDel.Text = "Очистить";
             this.buttonDel.UseVisualStyleBackColor = false;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
+            // 
+            // Zoo
+            // 
+            this.Zoo.DisplayIndex = 5;
+            this.Zoo.Text = "Zoo";
             // 
             // Form1
             // 
@@ -256,8 +264,9 @@
         private System.Windows.Forms.ColumnHeader Photo;
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader NAME;
-        private System.Windows.Forms.ColumnHeader Age;
-        private System.Windows.Forms.ColumnHeader Hash;
+        private System.Windows.Forms.ColumnHeader BirthDay;
+        private System.Windows.Forms.ColumnHeader StartWorking;
+        private System.Windows.Forms.ColumnHeader Zoo;
     }
 }
 

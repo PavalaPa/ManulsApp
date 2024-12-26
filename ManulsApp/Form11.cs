@@ -32,7 +32,7 @@ namespace ManulsApp {
                 }
                 else if (comboBox1.SelectedIndex == 2)
                 {
-                    richTextBox1.Text += cat.TimeToEat(dateTimePicker1.Value, (IFeedingManul)action) + "\n";
+                    richTextBox1.Text += cat.TimeToEat(dateTimePicker1.Value, (IFeeding)action) + "\n";
                 }
             }
         }
@@ -41,7 +41,7 @@ namespace ManulsApp {
         {
             NewPallasCat cat = new NewPallasCat(textBox1.Text);
             var cleeningAct = new Cleening();
-            IFeedingManul[] actions = { new Rest(), new Feeding()};
+            IFeeding[] actions = { new Rest(), new Feeding()};
             string pallasName = textBox1.Text;
             if (comboBox1.SelectedIndex == -1)
             {

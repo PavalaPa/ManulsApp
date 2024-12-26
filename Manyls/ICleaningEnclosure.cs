@@ -5,6 +5,6 @@ using System.Text;
 
 namespace Manyls {
     public interface ICleaningEnclosure {
-        string CleaningEnclosure(DateTime timeOfCleaning);
+        void CleaningEnclosure(DateTime timeOfCleaning);
     }
 }

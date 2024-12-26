@@ -11,7 +11,7 @@ namespace Manyls {
     public class FemaleManul : NewPallasCat {
         public FemaleManul() : base() { }
 
-        public FemaleManul(string name, DateTime dateTime, string zoo, string pathName) : base(name, dateTime, zoo, pathName) { }
+        public FemaleManul(int age, string name, string pathName) : base(age, name, pathName) { }
 
         public new void ManulasProp(ref string description, out string result, string name = "Кот")
         {
