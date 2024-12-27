@@ -59,14 +59,6 @@
       <Property Name="wards_" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Manyls.ManulKeeper" Collapsed="true">
-    <Position X="6" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAMAAAACAgAAAAAAAAEAAAAAAAAAAA=</HashCode>
-      <FileName>ManulKeeper.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="Manyls.ManulVeterinarian" Collapsed="true">
     <Position X="7.5" Y="4" Width="1.5" />
     <TypeIdentifier>
@@ -104,6 +96,14 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAACAAAAAAAAQ=</HashCode>
       <FileName>Capybara.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Manyls.ManulKeeper" Collapsed="true">
+    <Position X="6" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAMAAAACAgAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>ManulKeeper.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
