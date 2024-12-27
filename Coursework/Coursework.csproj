@@ -46,11 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddManul.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddManul.Designer.cs">
       <DependentUpon>AddManul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeName.Designer.cs">
+      <DependentUpon>ChangeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExchangeEnclosure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExchangeEnclosure.Designer.cs">
+      <DependentUpon>ExchangeEnclosure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedCards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedCards.Designer.cs">
+      <DependentUpon>MedCards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewWards.Designer.cs">
+      <DependentUpon>NewWards.cs</DependentUpon>
     </Compile>
     <Compile Include="StartPage.cs">
       <SubType>Form</SubType>
@@ -60,8 +90,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskManagement.Designer.cs">
+      <DependentUpon>TaskManagement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddManul.resx">
       <DependentUpon>AddManul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeName.resx">
+      <DependentUpon>ChangeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExchangeEnclosure.resx">
+      <DependentUpon>ExchangeEnclosure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedCards.resx">
+      <DependentUpon>MedCards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewWards.resx">
+      <DependentUpon>NewWards.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="StartPage.resx">
       <DependentUpon>StartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskManagement.resx">
+      <DependentUpon>TaskManagement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

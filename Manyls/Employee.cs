@@ -17,10 +17,7 @@ namespace Manyls {
         public List<string> CompletedTasks { get; private set; } = new List<string>();
         public void PerformTask(string task)
         {
-            if (AssociatedZoo != null && AssociatedZoo.AssignTask(this, task))
-            {
-                CompletedTasks.Add(task); // Сотрудник фиксирует выполненную задачу как свою.
-            }
+            CompletedTasks.Add(task); // Сотрудник фиксирует выполненную задачу как свою.
         }
         public virtual string Zoo { get; set; } = "Неизвестный зоопарк";
         public DateTime BirthDay { get; set; }
@@ -84,7 +81,7 @@ namespace Manyls {
                 return;
             }
             wards.Add(ward);
-            Info?.Invoke($"В список подопечных был добавлен новый манул с именем {ward.Name}. ");
+            Info?.Invoke($"В список подопечных {Name} был добавлен новый манул с именем {ward.Name}. ");
         }
         public void RemoveWard(NewPallasCat ward)
         {
@@ -94,7 +91,7 @@ namespace Manyls {
                 return;
             }
             wards.Remove(ward);
-            Info?.Invoke($"Из списка подопечных был удален манул с именем {ward.Name}. ");
+            Info?.Invoke($"Из списка подопечных {Name} был удален манул с именем {ward.Name}. ");
         }
         public void RemoveWard(string name)
         {
@@ -109,7 +106,7 @@ namespace Manyls {
                 // Используем индексатор для поиска манула по имени
                 var wardToRemove = this[name];
                 wards.Remove(wardToRemove);
-                Info?.Invoke($"Из списка подопечных был удален манул с именем {name}. ");
+                Info?.Invoke($"Из списка подопечных {Name} был удален манул с именем {name}. ");
             }
             catch (NullReferenceException)
             {

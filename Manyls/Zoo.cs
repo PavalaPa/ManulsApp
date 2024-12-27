@@ -20,21 +20,28 @@ namespace Manyls {
         //Ассоциации
         public List<Employee> Employees { get; set; }
 
-        public bool AssignTask(Employee employee, string task)
+        public bool AssignTask(string employeeName, string task)
         {
-            if (employee is ManulVeterinarian)
+            // Находим сотрудника по имени
+            var employee = Employees.FirstOrDefault(e => e.Name.Equals(employeeName, StringComparison.OrdinalIgnoreCase));
+
+            // Если сотрудник найден
+            if (employee != null)
             {
-                MessageBox.Show($"{employee.Name} выполняет задачу: {task}");
-                return true;
-            }
-            if (employee is ManulKeeper) 
-            {
-                MessageBox.Show($"{employee.Name} выполняет задачу: {task}");
-                return true;
+                if (employee is ManulVeterinarian || employee is ManulKeeper)
+                {
+                    employee.PerformTask(task);  // Выполняем задачу для найденного сотрудника
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show($"Сотрудник {employee.Name} не работает с манулами.");
+                    return false;
+                }
             }
             else
             {
-                MessageBox.Show($"Сотрудник не работает с манулами.");
+                MessageBox.Show("Сотрудник с таким именем не найден.");
                 return false;
             }
         }

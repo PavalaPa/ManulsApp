@@ -13,7 +13,7 @@ namespace Manyls {
         {
             Wards = wards;
         }
-
+        public ManulVeterinarian(string name, DateTime bday, string zoo, DateTime startWorking, string pathName) : base(name, bday, zoo, startWorking) { PathName = pathName; }
         public void NameText(PictureBox box, Font currFont, Color color)
         {
             using (Graphics g = Graphics.FromHwnd(box.Handle))

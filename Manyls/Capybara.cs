@@ -11,12 +11,13 @@ namespace Manyls {
         public Capybara() { }
 
         public string Name { get; set; } = "NoName";
-        public Eclosure Eclosure { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Eclosure Eclosure { get; set; }
         public Capybara(string name, Eclosure eclosure)
         {
             Name = name;
             Eclosure = eclosure;
         }
+        public Capybara(string name) { Name = name; }
         public bool Transfer()
         {
             if (Eclosure == null)
@@ -24,7 +25,7 @@ namespace Manyls {
                 MessageBox.Show("Невозможно прочитать данные о вольере, т.к. он не был добавлен.");
                 return false;
             }
-            MessageBox.Show($"{this.Name} проживает в вольере с ID: {Eclosure.ID}.");
+            MessageBox.Show($"{this.Name} проживает в вольере: {Eclosure.Name}.");
             return true;
         }
 
@@ -45,7 +46,7 @@ namespace Manyls {
                 var curEclosure = someAnimal.Eclosure;
                 someAnimal.Eclosure = this.Eclosure;
                 this.Eclosure = curEclosure;
-                MessageBox.Show($"Обмен вольерами произведен! Капибара {this.Name} теперь проживает в вольере {this.Eclosure}, а животное {someAnimal.Name} теперь проживает в {someAnimal.Eclosure}.");
+                MessageBox.Show($"Обмен вольерами произведен! Капибара {this.Name} теперь проживает в вольере {this.Eclosure.Name}, а животное {someAnimal.Name} теперь проживает в {someAnimal.Eclosure.Name}.");
             }
             else
             {
@@ -55,7 +56,7 @@ namespace Manyls {
                     return;
                 }
                 this.Eclosure = setEclosure;
-                MessageBox.Show($"Обмен вольерами произведен! Капибара {this.Name} теперь проживает в вольере {this.Eclosure}.");
+                MessageBox.Show($"Обмен вольерами произведен! Капибара {this.Name} теперь проживает в вольере {this.Eclosure.Name}.");
             }
         }
     }

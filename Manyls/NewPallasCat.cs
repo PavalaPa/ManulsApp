@@ -24,7 +24,8 @@ namespace Manyls {
                 NewPallasCat.BackColor = new MyColor(255, 255, 0); // Желтый цвет
                 Console.WriteLine("Мяу!");
             }
-            else {
+            else
+            {
                 NewPallasCat.BackColor = new MyColor(255, 0, 0); // Красный цвет
             }
         }
@@ -51,6 +52,7 @@ namespace Manyls {
             this.medHistory = new MedHistory(clinic);
         }
 
+        public NewPallasCat(string name) { Name = name; }
         public NewPallasCat()
         {
             PallasCatID = Interlocked.Increment(ref nextId);
@@ -96,7 +98,7 @@ namespace Manyls {
                 MessageBox.Show("Невозможно прочитать данные о вольере, т.к. он не был добавлен.");
                 return false;
             }
-            MessageBox.Show($"{this.Name} проживает в вольере с ID: {Eclosure.ID}.");
+            MessageBox.Show($"{this.Name} проживает в вольере: {Eclosure.Name}.");
             return true;
         }
 
@@ -117,7 +119,7 @@ namespace Manyls {
                 var curEclosure = someAnimal.Eclosure;
                 someAnimal.Eclosure = this.Eclosure;
                 this.Eclosure = curEclosure;
-                MessageBox.Show($"Обмен вольерами произведен! Кот {this.Name} теперь проживает в вольере {this.Eclosure}, а животное {someAnimal.Name} теперь проживает в {someAnimal.Eclosure}.");
+                MessageBox.Show($"Обмен вольерами произведен! Кот {this.Name} теперь проживает в вольере {this.Eclosure.Name}, а животное {someAnimal.Name} теперь проживает в {someAnimal.Eclosure.Name}.");
             }
             else
             {
@@ -127,7 +129,7 @@ namespace Manyls {
                     return;
                 }
                 this.Eclosure = setEclosure;
-                MessageBox.Show($"Обмен вольерами произведен! Кот {this.Name} теперь проживает в вольере {this.Eclosure}.");
+                MessageBox.Show($"Обмен вольерами произведен! Кот {this.Name} теперь проживает в вольере {this.Eclosure.Name}.");
             }
         }
 

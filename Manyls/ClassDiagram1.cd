@@ -95,7 +95,7 @@
   <Class Name="Manyls.Eclosure" Collapsed="true">
     <Position X="7.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAABBAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAABBAAAQAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Eclosure.cs</FileName>
     </TypeIdentifier>
   </Class>
