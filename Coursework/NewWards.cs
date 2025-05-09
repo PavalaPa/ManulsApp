@@ -33,5 +33,10 @@ namespace Coursework {
             manulToDel = comboBox1.Text;
             this.DialogResult = DialogResult.OK; // Устанавливаем результат
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
